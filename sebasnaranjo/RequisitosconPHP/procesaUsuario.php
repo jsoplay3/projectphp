@@ -25,6 +25,15 @@
         || !$documentoUsuarioSolicitado || !$passwordUsuarioSolicitado){
             echo "Ha faltado algun campo";
         };
+
+        $con=mysqli_connect('localhost', 'root','', 'ecosoft');
+        $sql="INSERT INTO `registro` VALUES ('$nombreUsuarioSolicitado', '$mailUsuarioSolicitado', '$documentoUsuarioSolicitado', '$passwordUsuarioSolicitado')";
+        $resultado=mysqli_query($con, $sql);
+        mysqli_close($con);
+        echo 'el nombre ingresado es: '.$nombreUsuarioSolicitado;
+        echo 'el mail ingresado es: '.$mailUsuarioSolicitado;
+        echo 'el documento ingresado es: '.$documentoUsuarioSolicitado;
+        echo 'la contraseña ingresada es: '.$passwordUsuarioSolicitado;
         ?>
     </div>
 </body>
