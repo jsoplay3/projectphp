@@ -37,9 +37,13 @@
         
         if(!preg_match('/^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/',"$mailUsuarioSolicitado")){
             echo "Estructura de correo no valida";
-        } else{
-            echo " Correo: ".$mailUsuarioSolicitado;
-        }
+        } 
+
+        $con=mysqli_connect('localhost', 'root','', 'requisitos');
+        $sql="INSERT INTO `usuarios` VALUES (' ','$nombreUsuarioSolicitado', '$mailUsuarioSolicitado', '$documentoUsuarioSolicitado', '$passwordUsuarioSolicitado')";
+        $resultado=mysqli_query($con, $sql);
+        mysqli_close($con);
+        
 
         ?>
     </div>
