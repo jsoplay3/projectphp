@@ -31,8 +31,13 @@
         if(!preg_match('/^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/',"$mailUsuarioSolicitado")){
             echo "El campo Mail del Usuario debe contener la estructura de un correo";
         }
+    ?>
+    <?php
+        include_once("db.php"); 
 
-        echo "<br><br> clave encriptada: ".$passwordUsuarioSolicitado;
+        $conectar=conn();
+        $sql="INSERT INTO `registro_usuarios` (`nombre_usuario`,`mail_usuario`, `documento_usuario`,`clave_usuario`) VALUES ('$nombreUsuarioSolicitado','$mailUsuarioSolicitado' ,'$documentoUsuarioSolicitado','$passwordUsuarioSolicitado')";
+        $resul = mysqli_query($conectar,$sql) or trigger_error("Error:",mysqli_error($conectar));
 
     ?>
     </div>
