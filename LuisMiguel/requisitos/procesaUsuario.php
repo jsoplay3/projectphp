@@ -40,9 +40,9 @@
         } 
 
         include_once('db.php');
-        $sql="INSERT INTO `usuarios` VALUES (' ','$nombreUsuarioSolicitado', '$mailUsuarioSolicitado', '$documentoUsuarioSolicitado', '$passwordUsuarioSolicitado')";
-        $resultado=mysqli_query($con, $sql);
-        mysqli_close($con);
+        $conectar=conn();
+        $sql="INSERT INTO `usuarios` VALUES ('$nombreUsuarioSolicitado', '$mailUsuarioSolicitado', '$documentoUsuarioSolicitado', '$passwordUsuarioSolicitado')";
+        $resul = mysqli_query($conectar,$sql) or trigger_error("Error:",mysqli_error($conectar));
         
 
         ?>
