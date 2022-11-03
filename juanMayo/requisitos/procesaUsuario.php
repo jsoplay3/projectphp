@@ -28,7 +28,7 @@
         include_once("db.php");
 
         $conectar=conn();
-        $sql="INSERT INTO registrousuario ('nombre_usuario','mail_usuario','nro_documento_usuario','contraseña_usuario') VALUES ('$nombreUsuarioSolicitado','$mailUsuarioSolicitado','$documentoUsuarioSolicitado','$passwordUsuarioSolicitado')";
+        $sql="INSERT INTO `registrousuario` (`nombre_usuario`,`mail_usuario`,`nro_documento_usuario`,`contraseña_usuario`) VALUES ('$nombreUsuarioSolicitado','$mailUsuarioSolicitado','$documentoUsuarioSolicitado','$passwordUsuarioSolicitado')";
         $resul = mysqli_query($conectar,$sql) or trigger_error("Error:",mysqli_error($conectar));
      ?>
 
