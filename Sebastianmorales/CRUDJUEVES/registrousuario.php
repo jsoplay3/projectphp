@@ -20,7 +20,7 @@
     include("menu.php");
 
     ?>
-    <h1>Registro</h1>
+    <center><h1>Registro</h1></center>
     <form action="procesausuario.php" method="post" onsubmit="return Validaciones()">
         <label class="form-label">Nombre de usuario</label>
         <input type="text" name="nombreUsuarioSolicitado" id="username" class="form-control" placeholder="Por favor ingrese sus datos" required />
