@@ -28,7 +28,7 @@
         <input type="text" name="documentoUsuarioSolicitado" class="form-control" id="documentoUsuarioSolicitado" required>
 
         <label class="form-label">Contraseña Del Usuario</label>
-        <input type="text" name="passwordUsuarioSolicitado" class="form-control" id="passwordUsuarioSolicitado" required>
+        <input type="password" name="passwordUsuarioSolicitado" class="form-control" id="passwordUsuarioSolicitado" required>
         <input type="submit" value="Registrar" class="btn btn-dark">
     </form>
     </div>
