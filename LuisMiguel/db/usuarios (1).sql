@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-11-2022 a las 18:59:55
+-- Tiempo de generación: 03-11-2022 a las 20:33:27
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -28,7 +28,6 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `usuarios` (
-  `Id` int(11) NOT NULL,
   `Nombre` varchar(65) NOT NULL,
   `Mail` varchar(64) NOT NULL,
   `NroDocumento` int(15) NOT NULL,
@@ -39,28 +38,9 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`Id`, `Nombre`, `Mail`, `NroDocumento`, `Contraseña`) VALUES
-(9, 'maria', 'maris.gt@gmail.com', 1004587967, 15986);
-
---
--- Índices para tablas volcadas
---
-
---
--- Indices de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`Id`);
-
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+INSERT INTO `usuarios` (`Nombre`, `Mail`, `NroDocumento`, `Contraseña`) VALUES
+('maria', 'maris.gt@gmail.com', 1004587967, 15986),
+('jul', 'jul@gmail.com', 10089558, 15489),;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
