@@ -15,16 +15,22 @@
 <div class="container">
 <?php
     include("menu.php");
+    include_once("conexion.php");
 
-   
+    $nombreUsuarioSolicitado=$_POST["nombreUsuarioSolicitado"];
+    $mailUsuarioSolicitado=$_POST["mailUsuarioSolicitado"];
+    $numeroUsuarioSolicitado=$_POST["numeroUsuarioSolicitado"];
+    $passUsuarioSolicitado=$_POST["passUsuarioSolicitado"];
     echo"<h1>Se ha registrado con exito</h1>";
 
-    
-    echo $_POST['nombreUsuarioSolicitado'];
-    echo $_POST['mailUsuarioSolicitado'];
-    echo $_POST['numeroUsuarioSolicitado'];
-    echo $_POST['passUsuarioSolicitado'];
-    ?>
+
+    $conectar=conn();
+    $sql="INSERT INTO usuarios ( User_Name, User_Mail, User_Document, User_Password ) VALUES ('$nombreUsuarioSolicitado','$mailUsuarioSolicitado',' $numeroUsuarioSolicitado','$passUsuarioSolicitado')";
+    $resul = mysqli_query($conectar,$sql) or trigger_error("Error:",mysqli_error($conectar));
+
+
+?>
+<meta http-equiv="refresh" content="3;url=registrousuario.php"/>
    
    </div> 
 </body>
