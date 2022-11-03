@@ -39,7 +39,7 @@
             echo "Estructura de correo no valida";
         } 
 
-        $con=mysqli_connect('localhost', 'root','', 'requisitos');
+        include_once('db.php');
         $sql="INSERT INTO `usuarios` VALUES (' ','$nombreUsuarioSolicitado', '$mailUsuarioSolicitado', '$documentoUsuarioSolicitado', '$passwordUsuarioSolicitado')";
         $resultado=mysqli_query($con, $sql);
         mysqli_close($con);
