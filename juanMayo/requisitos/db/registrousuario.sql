@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-11-2022 a las 20:33:27
+-- Tiempo de generación: 03-11-2022 a las 20:32:15
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -24,23 +24,22 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuarios`
+-- Estructura de tabla para la tabla `registrousuario`
 --
 
-CREATE TABLE `usuarios` (
-  `Nombre` varchar(65) NOT NULL,
-  `Mail` varchar(64) NOT NULL,
-  `NroDocumento` int(15) NOT NULL,
-  `Contraseña` int(64) NOT NULL
+CREATE TABLE `registrousuario` (
+  `nombre_usuario` varchar(20) NOT NULL,
+  `mail_usuario` varchar(20) NOT NULL,
+  `nro_documento_usuario` int(20) NOT NULL,
+  `contraseña_usuario` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `usuarios`
+-- Volcado de datos para la tabla `registrousuario`
 --
 
-INSERT INTO `usuarios` (`Nombre`, `Mail`, `NroDocumento`, `Contraseña`) VALUES
-('maria', 'maris.gt@gmail.com', 1004587967, 15986),
-('jul', 'jul@gmail.com', 10089558, 15489),;
+INSERT INTO `registrousuario` (`nombre_usuario`, `mail_usuario`, `nro_documento_usuario`, `contraseña_usuario`) VALUES
+('juan', 'juanpleito@gamil.com', 1001479968, '6813cc78c45dcca');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

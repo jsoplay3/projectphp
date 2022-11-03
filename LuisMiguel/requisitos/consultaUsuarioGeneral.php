@@ -13,11 +13,36 @@
 </head>
 <body>
 <div class="container">
-     <?php
-     include("menu.php");
 
+    <?php
+
+        include("menu.php");
+        $con=mysqli_connect('localhost', 'root','', 'requisitos');
+     $sql = "SELECT * FROM `usuarios`";
      
-     ?>
-    </div>
+     $resul = mysqli_query($con, $sql) or trigger_error("query failed" . mysqli_error($con), E_USER_ERROR);
+     
+    ?>
+
+    <table class="table m-center">
+
+        <tr>
+
+            <td>Nombre</td>
+            <td>Correo electronico </td>
+            <td>Numero de documento</td>
+        
+        </tr>
+
+        <?php
+            while ($rowTotal = mysqli_fetch_assoc($resul)) {
+            echo "<tr></td> <td>" . $rowTotal['Nombre'] . "</td> <td>" . $rowTotal['Mail'] . "</td> <td>" . $rowTotal['NroDocumento'] . "</td> <td></tr>";}
+            echo "";
+        ?>
+
+    </table>
+
+
+</div>
 </body>
 </html>
