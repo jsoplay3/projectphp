@@ -16,17 +16,22 @@
     <div class="container">
     <?php
         include("menu.php");
-    ?>
-    <h2>Registro de usuario</h2>
-    <?php
+
+    echo '<h2>Registro de usuario</h2>';
+    
         $nombreUsuarioSolicitado = $_POST['nombreUsuarioSolicitado'];
         $mailUsuarioSolicitado = $_POST['mailUsuarioSolicitado'];
         $documentoUsuarioSolicitado = $_POST['documentoUsuarioSolicitado'];
-        $passwordUsuarioSolicitado = $_POST['passwordUsuarioSolicitado'];
-        if ($nombreUsuarioSolicitado == ""){
-            echo "debe hacer los campos";
-        }
+        $passwordUsuarioSolicitado = md5 ($_POST['passwordUsuarioSolicitado']);
     ?>
+    <?php
+        include_once("db.php");
+
+        $conectar=conn();
+        $sql="INSERT INTO registrousuario ('nombre_usuario','mail_usuario','nro_documento_usuario','contraseña_usuario') VALUES ('$nombreUsuarioSolicitado','$mailUsuarioSolicitado','$documentoUsuarioSolicitado','$passwordUsuarioSolicitado')";
+        $resul = mysqli_query($conectar,$sql) or trigger_error("Error:",mysqli_error($conectar));
+     ?>
+
     </div>
 </body>
 </html>
