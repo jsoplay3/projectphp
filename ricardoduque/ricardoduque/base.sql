@@ -18,12 +18,9 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
---
--- base de datso de requisitos
+--base de datso de requisitos
 
---
 -- Estructura de tabla para la tabla `registro_usuarios`
---
 
 CREATE TABLE `registro_usuarios` (
   `nombre_usuario` varchar(20) NOT NULL,
@@ -42,6 +39,10 @@ INSERT INTO `registro_usuarios` (`nombre_usuario`, `mail_usuario`, `documento_us
 ('Isabela', 'isaskt@gmail.com', 526787, 'yhnujmiklo852'),
 ('Valentina', 'valenhe@gmail.com', 254862, 'iuytghjk963');
 COMMIT;
+
+
+
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
