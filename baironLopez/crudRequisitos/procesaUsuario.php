@@ -20,7 +20,7 @@
         $nombreUsuarioSolicitado = $_POST['nombreUsuarioSolicitado'];
         $mailUsuarioSolicitado = $_POST['mailUsuarioSolicitado'];
         $documentoUsuarioSolicitado = $_POST['documentoUsuarioSolicitado'];
-        $passwordUsuarioSolicitado = md5 ($_POST['passwordUsuarioSolicitado']);
+        $passwordUsuarioSolicitado = md5($_POST['passwordUsuarioSolicitado']);
 
         if(!$nombreUsuarioSolicitado || !$mailUsuarioSolicitado || !$documentoUsuarioSolicitado 
         || !$passwordUsuarioSolicitado){
@@ -36,7 +36,8 @@
         include_once("db.php"); 
 
         $conectar=conn();
-        $sql="INSERT INTO `registro_usuarios` (`nombre_usuario`,`mail_usuario`, `documento_usuario`,`clave_usuario`) VALUES ('$nombreUsuarioSolicitado','$mailUsuarioSolicitado' ,'$documentoUsuarioSolicitado','$passwordUsuarioSolicitado')";
+        $sql="INSERT INTO `registro_usuarios` (`nombre_usuario`,`mail_usuario`, `documento_usuario`,`clave_usuario`)
+        VALUES ('$nombreUsuarioSolicitado','$mailUsuarioSolicitado' ,'$documentoUsuarioSolicitado','$passwordUsuarioSolicitado')";
         $resul = mysqli_query($conectar,$sql) or trigger_error("Error:",mysqli_error($conectar));
 
     ?>
