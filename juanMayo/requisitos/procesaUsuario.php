@@ -17,7 +17,7 @@
     <?php
         include("menu.php");
 
-    echo '<h2>Registro de usuario</h2>';
+    echo '<h2>Usuario registrado</h2>';
     
         $nombreUsuarioSolicitado = $_POST['nombreUsuarioSolicitado'];
         $mailUsuarioSolicitado = $_POST['mailUsuarioSolicitado'];
@@ -28,10 +28,11 @@
         include_once("db.php");
 
         $conectar=conn();
-        $sql="INSERT INTO `registrousuario` (`nombre_usuario`,`mail_usuario`,`nro_documento_usuario`,`contraseña_usuario`) VALUES ('$nombreUsuarioSolicitado','$mailUsuarioSolicitado','$documentoUsuarioSolicitado','$passwordUsuarioSolicitado')";
+        $sql="INSERT INTO `registrousuario` (`ru_nombre_usuario`,`ru_mail_usuario`,`ru_nro_documento_usuario`,`ru_contraseña_usuario`) VALUES ('$nombreUsuarioSolicitado','$mailUsuarioSolicitado','$documentoUsuarioSolicitado','$passwordUsuarioSolicitado')";
         $resul = mysqli_query($conectar,$sql) or trigger_error("Error:",mysqli_error($conectar));
      ?>
 
     </div>
+    <meta http-equiv="refresh" content=";url=registrousuario.php"/>
 </body>
 </html>
