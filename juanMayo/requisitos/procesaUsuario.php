@@ -17,7 +17,7 @@
     <?php
         include("menu.php");
 
-    echo '<h2>Usuario registrado</h2>';
+    echo '<h2>Usuario registrado :)</h2>';
     
         $nombreUsuarioSolicitado = $_POST['nombreUsuarioSolicitado'];
         $mailUsuarioSolicitado = $_POST['mailUsuarioSolicitado'];
@@ -33,6 +33,6 @@
      ?>
 
     </div>
-    <meta http-equiv="refresh" content=";url=registrousuario.php"/>
+    <!-- <meta http-equiv="refresh" content=";url=registrousuario.php"/> -->
 </body>
 </html>
