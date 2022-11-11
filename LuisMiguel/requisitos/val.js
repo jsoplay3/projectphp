@@ -24,7 +24,16 @@ function val() {
         return false;
     }
     
+    alert("Registrado con exito");
+
+
+}
+
+function consulta() {
+    var docuserconsul = document.getElementById("consultasUser").value;
+    if(!docuserconsul){
+        alert("Rellene los datos");
+        return false;
+    }
   
-
-
 }

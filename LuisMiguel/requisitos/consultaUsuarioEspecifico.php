@@ -1,3 +1,7 @@
+<?php
+    include("tentica.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,25 +16,54 @@
 
 </head>
 <body>
-<div class="container">
-     <?php
-     include("menu.php");
-     ?>
+    <div class="container ">
+
+            <table class="table m-2">
+
+                
+                <tr>
+                    <td>ID</td>
+                    <td>Nombre</td>
+                    <td>Correo electronico </td>
+                    <td>Numero de documento</td>
+                    <td>Fecha de registro</td>
+                    <td>Fecha actualizada</td>
+                </tr>
+                
+                <?php
+
+                    include("menu.php");
+                    include('db.php');
+                    
+                    $consultaUser = $_POST['consultado'] ;
+
+                        if(!$consultaUser){
+                            header("Location: consultaform.php");
+                            
+                        }else{
+
+                            $con=conn();
+                            $sql = "SELECT * FROM `usuarios` WHERE `NroDocumento` ='$consultaUser'";
+                            $resul = mysqli_query($con,$sql) or trigger_error("Error:",mysqli_error($con));
+                        
+                            while ($rowTotal = mysqli_fetch_assoc($resul)) {
+                                echo "<tr> <td>" . $rowTotal['us_Id'] . "</td> <td>" . $rowTotal['Nombre'] . "</td> <td>" . $rowTotal['Mail'] . "</td> <td>" . $rowTotal['NroDocumento'] . "</td> <td>" . $rowTotal['us_fechaRegistro'] . "</td> <td>" . $rowTotal['us_fechaModificacion'] . "</td> </tr>";
+                            }
+                        
+                        
+                            
+
+                        }
+                    
+                        
+                        
+                        
+                    
+                ?>
+                
+            </table>
+
     </div>
-    <div class="container">
 
 
-    </div>
-    <form>
-        <div class="container ">
-
-            <label for="">Id del usuario</label>
-            <input type="text" class="form-control m-2">
-            <input type="submit" value="Consultar usuario" class="btn btn-outline-success m-3">
-           
-
-        </div>
-        
-    </form>
-</body>
 </html>

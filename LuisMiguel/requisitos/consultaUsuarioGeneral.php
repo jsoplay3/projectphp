@@ -1,3 +1,7 @@
+<?php
+    include("tentica.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,33 +19,33 @@
 <div class="container">
 
     <?php
-
         include("menu.php");
-        $con=mysqli_connect('localhost', 'root','', 'requisitos');
-     $sql = "SELECT * FROM `usuarios`";
-     
-     $resul = mysqli_query($con, $sql) or trigger_error("query failed" . mysqli_error($con), E_USER_ERROR);
-     
+        include_once('db.php');
+        $con=conn();
+        $estado="activo";
+        $sql = "SELECT * FROM `usuarios` WHERE `us_estadoUsuario` = '$estado'";
+        
+        $resul = mysqli_query($con, $sql) or trigger_error("query failed" . mysqli_error($con), E_USER_ERROR);
+
     ?>
 
-    <table class="table m-center">
+    <table class="table m-5">
 
-        <tr>
-
-            <td>Nombre</td>
-            <td>Correo electronico </td>
-            <td>Numero de documento</td>
+            <tr>
         
-        </tr>
-
-        <?php
+                <td>Nombre</td>
+                <td>Correo electronico </td>
+                <td>Numero de documento</td>
+                
+            </tr>
+            
+            <?php
             while ($rowTotal = mysqli_fetch_assoc($resul)) {
-            echo "<tr></td> <td>" . $rowTotal['Nombre'] . "</td> <td>" . $rowTotal['Mail'] . "</td> <td>" . $rowTotal['NroDocumento'] . "</td> <td></tr>";}
+                echo "<tr></td> <td>" . $rowTotal['Nombre'] . "</td> <td>" . $rowTotal['Mail'] . "</td> <td>" . $rowTotal['NroDocumento'] . "</td> <td></tr>";
+            }
             echo "";
-        ?>
-
+            ?>
     </table>
-
 
 </div>
 </body>

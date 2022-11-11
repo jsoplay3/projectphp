@@ -1,3 +1,7 @@
+<?php
+    include("tentica.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,6 +48,7 @@
         $sql="INSERT INTO `usuarios` VALUES ('$nombreUsuarioSolicitado', '$mailUsuarioSolicitado', '$documentoUsuarioSolicitado', '$passwordUsuarioSolicitado')";
         $resul = mysqli_query($conectar,$sql) or trigger_error("Error:",mysqli_error($conectar));
         
+        header("Location: registroUsuario.php");
 
         ?>
     </div>

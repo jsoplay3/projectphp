@@ -1,3 +1,7 @@
+<?php
+    include("tentica.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

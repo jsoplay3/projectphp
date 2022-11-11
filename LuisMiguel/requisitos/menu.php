@@ -26,7 +26,7 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="registroUsuario.php">Registrar Usuario</a></li>
             <li><a class="dropdown-item" href="consultaUsuarioGeneral.php">Consultar Usuarios</a></li>
-            <li><a class="dropdown-item" href="consultaUsuarioEspecifico.php">Consultar Usuario Especifico</a></li>
+            <li><a class="dropdown-item" href="consultaform.php">Consultar Usuario Especifico</a></li>
             <li><a class="dropdown-item" href="eliminarUsuarioGeneral.php">Eliminar Usuarios</a></li>
             <li><a class="dropdown-item" href="eliminarUsuarioEspecifico.php">Eliminar Usuario Específico</a></li>
             <li><a class="dropdown-item" href="modificarUsuario.php">Modificar usuario</a></li>
@@ -34,6 +34,9 @@
         </li>
         <li class="nav-item">
           <a class="nav-link disabled">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="cerrarSession.php">Logout</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
