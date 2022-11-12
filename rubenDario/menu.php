@@ -33,7 +33,7 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled">Login</a>
+          <a class="nav-link " href="cerrarSession.php">LogOut</a>
         </li>
       </ul>
       <form class="d-flex" role="search">

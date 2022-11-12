@@ -1,3 +1,8 @@
+<?php
+include('autentica.php');
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -19,29 +24,35 @@
     <div class="container">
         <?php
         include("menu.php");
-        include_once('dataBaseConexion.php')
+
         ?>
-            </div>
-            
-        
-        <div class="form">
-        <div class="container"><h2>Registro de usuario</h2></div>
-            <form action="insertRegistro.php" method="POST" onsubmit="return validate()" class="form-control">
-                <label>Nombre</label>
-                <input type="text" name="userName" id="userName" class="form-control mb-3">
+    </div>
 
-                <label>Correo electronico</label>
-                <input type="mail" name="userMail" id="userMail" class="form-control mb-3">
 
-                <label>Numero de documento</label>
-                <input type="number" name="userId" id="userId" class="form-control">
 
-                <label>Contraseña nueva</label>
-                <input type="password" name="userPassword" id="userPassword" class="form-control mb-3">
+    <div class="container">
+        <h2>Registro de usuario</h2>
 
-                <input type="submit" value="Registrar" class="form-control mb-3 btn btn-danger">
-            </form>
-        </div>
+        <form action="insertRegistro.php" method="POST" onsubmit="return validate()" class="form-control">
+            <label>Nombre completo</label>
+            <input type="text" name="userName" id="userName" class="form-control mb-3">
+
+            <label>Nombre de usuario</label>
+            <input type="text" name="userName2" id="userName2" class="form-control mb-3">
+
+            <label>Correo electronico</label>
+            <input type="mail" name="userMail" id="userMail" class="form-control mb-3">
+
+            <label>Numero de documento</label>
+            <input type="number" name="userId" id="userId" class="form-control">
+
+            <label>Contraseña nueva</label>
+            <input type="password" name="userPassword" id="userPassword" class="form-control mb-3">
+
+            <input type="submit" value="Registrar" class="form-control mb-3 btn btn-danger">
+        </form>
+    </div>
+
 
 
 </body>

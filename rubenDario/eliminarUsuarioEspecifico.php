@@ -1,3 +1,7 @@
+<?php
+include('autentica.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,31 +21,31 @@
 <body>
     <div class="container">
         <?php
-                include("menu.php");
-                include_once('dataBaseConexion.php');
-                ?>
+        include("menu.php");
+        include_once('dataBaseConexion.php');
+        ?>
     </div>
 
-        <div class="form">
-            <form action="eliminarUsuarioEspecifico.php" method="POST" onsubmit="return userDrop()" class="form-cotrol mb-3">
-                <label class="form-label">Ingrese el nuemero de documento</label>
-                <input type="text" name="userDrop" id="userDrop" class="form-control mb-4">
-                <input type="submit" value="Eliminar registro" class="form-control btn btn-warning">
+    <div class="container">
+        <form action="eliminarUsuarioEspecifico.php" method="POST" onsubmit="return userDrop()" class="form-cotrol mb-3">
+            <label class="form-label">Ingrese el nuemero de documento</label>
+            <input type="text" name="userDrop" id="userDrop" class="form-control mb-4">
+            <input type="submit" value="Eliminar registro" class="form-control btn btn-warning">
 
-            </form>
-        </div>
+        </form>
+    </div>
 
     <div class="container">
 
         <?php
-        $userDrop = "";
+        error_reporting (0);
         $userDrop = $_POST['userDrop'];
         if (!$userDrop) {
-        echo  "Digite el numero de documento que desea eliminar";
-        echo "";
+            echo  "Digite el numero de documento que desea eliminar";
+            echo "";
         } else {
             $sql = "DELETE FROM users WHERE document = '$userDrop'";
-        $resul = mysqli_query($conexion, $sql) or trigger_error("query failed" . mysqli_error($conexion), E_USER_ERROR);
+            $resul = mysqli_query($conexion, $sql) or trigger_error("query failed" . mysqli_error($conexion), E_USER_ERROR);
             echo "El usuario con numero de documento $userDrop, fue eliminado exitosamente";
         }
         ?>

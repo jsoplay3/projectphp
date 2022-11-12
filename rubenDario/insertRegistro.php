@@ -20,16 +20,18 @@
         include("menu.php");
         include_once('dataBaseConexion.php');
         ?>
-        <div class="form">
+        <div class="container">
             <h2>Registro de Usuarios</h2>
         </div>
     </div>
-    <div class="form">
+    <div class="container">
         <?php
         $userName = $_POST['userName'];
+        $userName2 = $_POST['userName2'];
         $userMail = $_POST['userMail'];
         $userId =  $_POST['userId'];
         $userPassword = $_POST['userPassword'];
+        $encriptada = sha1(md5($userPassword));
 
         if (
             !$userName || !$userMail
@@ -37,12 +39,12 @@
         ) {
             echo "Ha faltado algun campo";
         } else {
-            $sql = "INSERT INTO `users` (`id`, `name`, `email`, `document`, `password`, `login_date`, `update_date`) VALUES (NULL, '$userName', '$userMail', '$userId', '$userPassword', current_timestamp(), NULL)";
+            $sql = "INSERT INTO `users` (`id`, `userName`, `user_name2`, `email`, `document`, `userPassword`, `login_date`, `update_date`, `status`) VALUES (NULL, '$userName', '$userName2', '$userMail', '$userId', '$encriptada', current_timestamp(), NULL, 'activo')";
             $resul = mysqli_query($conexion, $sql) or trigger_error("query failed" . mysqli_error($conexion), E_USER_ERROR);
             echo "$userName fue registrado con exito";
         };
         ?>
-        <meta http-equiv="refresh" content="1;url=consultarUsuarioGeneral.php"/>
+        <!-- <meta http-equiv="refresh" content="1;url=consultarUsuarioGeneral.php"/> -->
         <div class="form">
             <a type="button" value="" href="index.php">Pagina principal</a>
         </div>
