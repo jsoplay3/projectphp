@@ -44,7 +44,7 @@ include('autentica.php');
             <input type="mail" name="userMail" id="userMail" class="form-control mb-3">
 
             <label>Numero de documento</label>
-            <input type="number" name="userId" id="userId" class="form-control">
+            <input type="number" name="userId" id="document" class="form-control">
 
             <label>Contraseña nueva</label>
             <input type="password" name="userPassword" id="userPassword" class="form-control mb-3">

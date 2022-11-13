@@ -1,7 +1,7 @@
 <?php
 include('menu.php');
-    $usuario = $_POST['userNameSolicitado'];
-    $password = $_POST['passwordSolicitado'];
+    $usuario = $_POST['userName'];
+    $password = $_POST['userPassword'];
     $passwordEncriptada = sha1(md5($password));
 
     echo $usuario;

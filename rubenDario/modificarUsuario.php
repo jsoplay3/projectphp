@@ -10,6 +10,8 @@ include('autentica.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modificar Usuario</title>
+    <script src="index.js"></script>
+
     <!-- <link href="style.css" type="text/css" rel="stylesheet" /> -->
     <!-- CSS only -->
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> -->
@@ -54,37 +56,37 @@ include('autentica.php');
 
     <div class="container">
         <h1>Actualizar usuario</h1>
-        <form action="update.php" method="post" class="form-control">
+        <form action="update.php" method="post" class="form-control" onsubmit="return validateUpdate()">
             <label class="form-label">Numero de documento </label>
-            <input type="text" name="document" class="form-control">
+            <input type="text" name="document" id="documento" class="form-control">
 
             <label class="form-label">Nombre nuevo</label>
-            <input type="text" name="newName" class="form-control">
+            <input type="text" name="newName" id="newName" class="form-control">
 
             <label class="form-label">Nombre de Usuario nuevo</label>
-            <input type="text" name="newUserName" class="form-control">
+            <input type="text" name="newUserName" id="newUserName" class="form-control">
 
             <label class="form-label">Correo electronico nuevo</label>
-            <input type="text" name="newEmail" class="form-control">
+            <input type="text" name="newEmail" id="email" class="form-control">
 
             <label class="form-label">Contraseña nueva</label>
-            <input type="password" name="newPassword" class="form-control">
+            <input type="password" name="newPassword" id="newPassword" class="form-control">
 
             <label class="form-label">Nombre de usuario que modifica</label>
-            <input type="text" name="updateUser" class="form-control">
+            <input type="text" name="updateUser" id="updateUser" class="form-control">
 
             <label class="form-label">Fecha de modificacion</label>
-            <input type="datetime-local" name="updateDate" class="form-control mb-3">
+            <input type="datetime-local" name="updateDate" id="updateDate" class="form-control mb-3">
 
             <label class="form-label">Estado de la cuenta</label>
-            <select  name="status" class="form-control mb-3">
-            <option value="activo">Estado de la cuenta</option>
+            <select  name="status" id="status" class="form-control mb-3">
+            <option value="0">Estado de la cuenta</option>
             <option value="activo">Activo</option>
             <option value="inactivo">Inactivo</option>
 
             </select>
 
-            <input type="submit" value="Registrar" class="form-control mb-3 btn btn-danger">
+            <input type="submit" value="Actualizar" class="form-control mb-3 btn btn-warning">
 
 
 
