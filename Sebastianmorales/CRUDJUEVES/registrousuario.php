@@ -30,7 +30,7 @@
         <input type="number" name="numeroUsuarioSolicitado" id="usernumber" class="form-control"  placeholder="Por favor ingrese sus datos" required/>
         <label class="form-label">Contraseña del usuario</label>
         <input type="password" name="passUsuarioSolicitado" id="userpass" class="form-control" placeholder="Por favor ingrese sus datos" required />
-        <input type="submit" value="Registar" class="btn btn-outline-success" class="button" />    
+        <center><input type="submit" value="Registar" class="btn btn-outline-success" class="button" /></center>   
 </form>
    </div> 
 </body>
