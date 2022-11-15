@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 if(!$_SESSION['usuarioX'] && !$_SESSION['claveX'])
 {
@@ -7,4 +8,5 @@ if(!$_SESSION['usuarioX'] && !$_SESSION['claveX'])
 else {
     
 }
+
 ?>

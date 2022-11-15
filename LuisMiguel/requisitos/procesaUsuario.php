@@ -51,6 +51,7 @@
         header("Location: registroUsuario.php");
 
         ?>
+        
     </div>
 </body>
 </html>

@@ -37,3 +37,13 @@ function consulta() {
     }
   
 }
+
+function usercon(){
+    var userx = document.getElementById("userName").value;
+    var passx = document.getElementById("userPass").value;
+    if(!userx || !passx){
+        alert("Rellene los datos");
+        return false;
+    }
+
+}
