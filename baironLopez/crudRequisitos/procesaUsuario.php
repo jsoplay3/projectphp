@@ -30,11 +30,9 @@
             echo "Debes llenar todos los campos";
         }else if(!is_numeric ($documentoUsuarioSolicitado)){
             echo "El campo Numero de Documento debe contener solo digitos numericos";
-        }
-        if(!preg_match('/^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/',"$mailUsuarioSolicitado")){
+        }else if(!preg_match('/^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/',"$mailUsuarioSolicitado")){
             echo "El campo Mail del Usuario debe contener la estructura de un correo";
-        }
-
+        }else{
         ?>
         <?php
         include_once("db.php"); 
@@ -42,6 +40,8 @@
         $conectar=conn();
         $sql="INSERT INTO `registro_usuarios` (`nombre_usuario`,`mail_usuario`, `documento_usuario`,`clave_usuario`,`estado`) VALUES ('$nombreUsuarioSolicitado','$mailUsuarioSolicitado' ,'$documentoUsuarioSolicitado','$passwordUsuarioSolicitado','$estado')";
         $resul = mysqli_query($conectar,$sql) or trigger_error("Error:",mysqli_error($conectar));
+        header("Location: registroUsuario.php");
+        }
 
     ?>
     </div>
