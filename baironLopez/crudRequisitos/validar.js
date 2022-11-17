@@ -14,5 +14,4 @@ const validacion = () => {
         alert("El campo Mail del Usuario debe tener la estructura de un correo");
         return false;
     }
-
 }

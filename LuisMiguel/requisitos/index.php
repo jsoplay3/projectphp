@@ -12,10 +12,22 @@
 
 </head>
 <body>
+    <script src=val.js></script>
+
     <div class="container">
-     <?php
-     include("menu.php");
-     ?>
+    
+        <form action="procesaLogin.php" method="post" onsubmit="return usercon()">
+
+            <label>Nombre usuario</label>
+            <input type="text" name="userNameSolicitado"  id="userName"require class="form-control m-1"/>
+            <br>
+            <label>PassWord</label>
+            <input type="password" name="passwordSolicitado" id="userPass" require class="form-control m-1"/>
+            <br>
+            <input type="submit" value="Ingresar" class="btn btn-outline-success m-3"/>
+
+        </form>
+
     </div>
 </body>
 </html>

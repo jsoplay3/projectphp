@@ -8,8 +8,10 @@ function validaciones(){
         alert("Debe diligenciar todos los campos");
         return false;
 
-    }
-
+while (condition) {
+	    }
+	
+}
     var mailValid = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
     if (mailValid.test(mailUsuario.value)){
         alert ("Debe ingresar un correo electronico valido")

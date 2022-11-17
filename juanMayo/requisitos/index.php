@@ -18,5 +18,11 @@
         include("menu.php");
     ?>
     </div>
+
+    <H2>Bienvenido al Index :D</H2>
 </body>
+<style>
+    H2. {
+        justify-content: center;}
+</style>
 </html>

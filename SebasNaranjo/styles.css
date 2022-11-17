@@ -1,0 +1,32 @@
+
+form{
+    border: 5px solid #C0E3E3;
+    border-style:dotted;
+    padding: 3em 1em 3em 1em;
+}
+
+.red{
+    font-family: 'Rubik Bubbles', cursive;
+    font-size: 3em;
+    color: #a52019 !important;
+}
+.blue{
+    font-family: 'Rubik Bubbles', cursive;
+    font-size: 3em;
+    color: #0B0EE1!important;
+}
+
+h3{
+    font-family: 'Poor Story', cursive;
+}
+
+.blueAdmin{
+    font-family: 'Rubik Bubbles', cursive;
+    font-size: 3em;
+    color: #fff!important;
+}
+.redAdmin{
+    font-family: 'Rubik Bubbles', cursive;
+    font-size: 3em;
+    color: #fff!important;
+}

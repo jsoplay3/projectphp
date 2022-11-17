@@ -1,3 +1,6 @@
+<?php
+    include("autenticacion.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,11 +16,54 @@
 </head>
 <body>
 <div class="container">
-<?php
+<table class="table m-2">
 
-    include("menu.php");
+    
+    <tr style="border-color:">
+        <td>ID</td>
+        <td>Nombre</td>
+        <td>Correo electronico </td>
+        <td>Numero de documento</td>
+        <td>Fecha de registro</td>
+        
+    </tr>
+    
+    <?php
 
+        include("menu.php");
+        include('conexion.php');
+        
+        $consultaUser = $_POST['Consul'] ;
+        
+
+            
+
+            if(!$consultaUser){
+                echo "Debes llenar todos los campos";
+                header("Location: Formconsul.php");
+                
+            }else{
+
+                $con=conn();
+                $sql = "SELECT * FROM `usuarios` WHERE `User_Document` ='$consultaUser'";
+                $resul = mysqli_query($con,$sql) or trigger_error("Error:",mysqli_error($con));
+            
+                while ($rowTotal = mysqli_fetch_assoc($resul)) {
+                    echo "<tr> <td>" . $rowTotal['ru_ID'] . "</td> <td>" . $rowTotal['User_Name'] . "</td> <td>" . $rowTotal['User_Mail'] . "</td> <td>" . $rowTotal['User_Document'] . "</td> <td>" . $rowTotal['ru_FechaRegistro'] . "</td> <td>";
+                }
+            
+            
+                
+
+            }
+        
+            
+            
+            
+        
     ?>
+    
+</table>
     </div>
 </body>
 </html>

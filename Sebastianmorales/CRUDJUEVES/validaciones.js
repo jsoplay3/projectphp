@@ -3,6 +3,7 @@ function Validaciones(){
     var userMail = document.getElementById("usermail").value;
     var userNumber = document.getElementById("usernumber").value;
     var userPass = document.getElementById("userpass").value;
+    
 
     if (userName, userPass==""){
 

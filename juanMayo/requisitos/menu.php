@@ -24,10 +24,10 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="registroUsuario.php">Registrar Usuarios</a></li>
-            <li><a class="dropdown-item" href="registroUsuarioEspecifico.php">Registrar Usuario Especifico</a></li>
             <li><a class="dropdown-item" href="eliminarUsuarioGeneral.php">Eliminar usuario</a></li>
             <li><a class="dropdown-item" href="eliminarUsuarioEspecifico.php">Eliminar usuario Especifico</a></li>
             <li><a class="dropdown-item" href="consultaUsuarioGeneral.php">Consultar usuario</a></li>
+            <li><a class="dropdown-item" href="consultaUsuarioEspecifico.php">Consultar Usuario Especifico</a></li>
             <li><a class="dropdown-item" href="modificarUsuario.php">Modificar usuario</a></li>
           </ul>
         </li>

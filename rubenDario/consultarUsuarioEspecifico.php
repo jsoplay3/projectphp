@@ -1,3 +1,7 @@
+<?php
+include('autentica.php');
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -42,6 +46,7 @@
             </tr>
             <div class="container">
                 <?php
+                error_reporting (0);
                 $documentQuery = $_POST['documentQuery'];
                 $sql = "SELECT * FROM `users` WHERE document ='$documentQuery'";
                 $resul = mysqli_query($conexion, $sql) or trigger_error("query failed" . mysqli_error($conexion), E_USER_ERROR);

@@ -14,8 +14,23 @@
 <body>
     <div class="container">
     <?php
-    include("menu.php");
+   
    ?>
+    <center>
+            <h1>Inicio de sesion</h1>
+        </center>
+        <form action="loginprocesa.php" method="post">
+            <div class="container" style="width: 70%;">
+                <label for="name">Nombre de usuario</label>
+                <p><input type="text" name="NameUser" required class="form-control" style="border-color:black;">
+                <p> <label for="pass">Password</label>
+                <p><input type="text" name="PassUser" required class="form-control" style="border-color:black;"> 
+                    <center>
+                        <p><input type="submit" value="Ingresar"  class="form-control" style="border-color:black; width:50%; padding: 10px;">
+                    </center>
+               
+                    <p><a href="registrousuario.php">Registrarse</a> 
+            </div>
     </div>
 </body>
 </html>

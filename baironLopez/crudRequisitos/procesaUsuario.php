@@ -12,7 +12,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container"><?php
+    <div class="container">
+        <?php
         include("menu.php");
     
         echo '<h2>REGISTRO DE USUARIOS</h2>';
@@ -20,7 +21,9 @@
         $nombreUsuarioSolicitado = $_POST['nombreUsuarioSolicitado'];
         $mailUsuarioSolicitado = $_POST['mailUsuarioSolicitado'];
         $documentoUsuarioSolicitado = $_POST['documentoUsuarioSolicitado'];
-        $passwordUsuarioSolicitado = md5 ($_POST['passwordUsuarioSolicitado']);
+        $passwordUsuarioSolicitado = sha1(md5($_POST['passwordUsuarioSolicitado']));
+        $estado = TRUE;
+        
 
         if(!$nombreUsuarioSolicitado || !$mailUsuarioSolicitado || !$documentoUsuarioSolicitado 
         || !$passwordUsuarioSolicitado){
@@ -31,12 +34,13 @@
         if(!preg_match('/^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/',"$mailUsuarioSolicitado")){
             echo "El campo Mail del Usuario debe contener la estructura de un correo";
         }
-    ?>
-    <?php
+
+        ?>
+        <?php
         include_once("db.php"); 
 
         $conectar=conn();
-        $sql="INSERT INTO `registro_usuarios` (`nombre_usuario`,`mail_usuario`, `documento_usuario`,`clave_usuario`) VALUES ('$nombreUsuarioSolicitado','$mailUsuarioSolicitado' ,'$documentoUsuarioSolicitado','$passwordUsuarioSolicitado')";
+        $sql="INSERT INTO `registro_usuarios` (`nombre_usuario`,`mail_usuario`, `documento_usuario`,`clave_usuario`,`estado`) VALUES ('$nombreUsuarioSolicitado','$mailUsuarioSolicitado' ,'$documentoUsuarioSolicitado','$passwordUsuarioSolicitado','$estado')";
         $resul = mysqli_query($conectar,$sql) or trigger_error("Error:",mysqli_error($conectar));
 
     ?>

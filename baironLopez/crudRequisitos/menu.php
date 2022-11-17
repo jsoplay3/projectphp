@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +13,7 @@
 <body>
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.php">LogTech</a>
+    <a class="navbar-brand">LogTech</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -26,14 +27,15 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="registroUsuario.php">Registrar Usuarios</a></li>
             <li><a class="dropdown-item" href="consultaUsuarioGeneral.php">Consultar Usuarios</a></li>
-            <li><a class="dropdown-item" href="consultaUsuarioEspecifico.php">Consultar Usuario Especifico</a></li>
             <li><a class="dropdown-item" href="eliminarUsuarioGeneral.php">Eliminar Usuarios</a></li>
-            <li><a class="dropdown-item" href="eliminarUsuarioEspecifico.php">Eliminar Usuario Especifico</a></li>
             <li><a class="dropdown-item" href="modificarUsuario.php">Modificar Usuarios</a></li>
         </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="cerrarSession.php">Logout</a>
         </li>
       </ul>
       <form class="d-flex" role="search">

@@ -24,7 +24,26 @@ function val() {
         return false;
     }
     
-  
+    alert("Registrado con exito");
 
+
+}
+
+function consulta() {
+    var docuserconsul = document.getElementById("consultasUser").value;
+    if(!docuserconsul){
+        alert("Rellene los datos");
+        return false;
+    }
+  
+}
+
+function usercon(){
+    var userx = document.getElementById("userName").value;
+    var passx = document.getElementById("userPass").value;
+    if(!userx || !passx){
+        alert("Rellene los datos");
+        return false;
+    }
 
 }

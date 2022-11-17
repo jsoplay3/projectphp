@@ -1,3 +1,7 @@
+<?php
+include('autentica.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,13 +18,13 @@
 </head>
 
 <body>
-    <div class="container"> <?php
-                            include("menu.php");
-                            include_once('dataBaseConexion.php');
-                            // $conectar = conn();
-                            $sql = "SELECT * FROM `users`";
-                            $resul = mysqli_query($conexion, $sql) or trigger_error("query failed" . mysqli_error($conexion), E_USER_ERROR);
-                            ?>
+    <div class="container">
+        <?php
+        include("menu.php");
+        include_once('dataBaseConexion.php');
+        $sql = "SELECT * FROM `users`";
+        $resul = mysqli_query($conexion, $sql) or trigger_error("query failed" . mysqli_error($conexion), E_USER_ERROR);
+        ?>
     </div>
 
     <div class="container">
@@ -28,15 +32,20 @@
             <tr>
                 <td>ID</td>
                 <td>Nombre</td>
+                <td>Nombre de usuario</td>
                 <td>Correo electronico </td>
                 <td>Numero de documento</td>
                 <td>Fecha de registro</td>
-                <td>Fecha actualizada</td>
+                <td>Fecha de modificacion</td>
+                <td>Usario de  modificacion</td>
+                <td>Estado de la cuenta</td>
+
+                
             </tr>
-            
+
             <?php
             while ($rowTotal = mysqli_fetch_assoc($resul)) {
-                echo "<tr> <td>" . $rowTotal['id'] . "</td> <td>" . $rowTotal['name'] . "</td> <td>" . $rowTotal['email'] . "</td> <td>" . $rowTotal['document'] . "</td> <td>" . $rowTotal['login_date'] . "</td> <td>" . $rowTotal['update_date'] . "</td> </tr>";
+                echo "<tr> <td>" . $rowTotal['id'] . "</td> <td>" . $rowTotal['userName'] . "</td> <td>" . $rowTotal['user_name2'] . "</td> <td>" . $rowTotal['email'] . "</td> <td>" . $rowTotal['document'] . "</td> <td>" . $rowTotal['login_date'] . "</td> <td>" . $rowTotal['update_date'] . "</td>  <td>" . $rowTotal['user_update'] . "</td> <td>" . $rowTotal['status'] . "</td> </tr>";
             }
             echo "";
             ?>

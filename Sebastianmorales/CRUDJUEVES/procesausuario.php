@@ -30,7 +30,7 @@
 
 
 ?>
-<meta http-equiv="refresh" content="3;url=registrousuario.php"/>
+<meta http-equiv="refresh" content="3;url=registrousuario.php"/>    
    
    </div> 
 </body>

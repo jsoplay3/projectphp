@@ -1,3 +1,6 @@
+<?php
+    include("autentica.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,16 +22,16 @@
     <H2>REGISTRO DE USUARIOS</H2>
     <form action="procesaUsuario.php" method="post" onsubmit="return validacion()">
         <label class="form-label">Nombre Del Usuario</label>
-        <input type="text" name="nombreUsuarioSolicitado" class="form-control" id="nombreUsuarioSolicitado" required>
+        <input type="text" name="nombreUsuarioSolicitado" class="form-control" id="nombreUsuarioSolicitado" >
 
         <label class="form-label">Mail Del Usuario</label>
-        <input type="text" name="mailUsuarioSolicitado" class="form-control" id="mailUsuarioSolicitado" required>
+        <input type="text" name="mailUsuarioSolicitado" class="form-control" id="mailUsuarioSolicitado" >
 
         <label class="form-label">Nro De Documento Del Usuario</label>
-        <input type="text" name="documentoUsuarioSolicitado" class="form-control" id="documentoUsuarioSolicitado" required>
+        <input type="text" name="documentoUsuarioSolicitado" class="form-control" id="documentoUsuarioSolicitado" >
 
         <label class="form-label">Contraseña Del Usuario</label>
-        <input type="text" name="passwordUsuarioSolicitado" class="form-control" id="passwordUsuarioSolicitado" required>
+        <input type="password" name="passwordUsuarioSolicitado" class="form-control" id="passwordUsuarioSolicitado" >
         <input type="submit" value="Registrar" class="btn btn-dark">
     </form>
     </div>

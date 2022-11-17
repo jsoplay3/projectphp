@@ -14,9 +14,35 @@
 <body>
 <div class="container">
 <?php
-    include("menu.php");
+        include("menu.php");
+        include_once('conexion.php');
+        $con=conn();
+        $status="activo";
+        $sql = "SELECT * FROM `usuarios` WHERE `ru_userstatus` = '$status'";
+        
+        $resul = mysqli_query($con, $sql) or trigger_error("query failed" . mysqli_error($con), E_USER_ERROR);
 
     ?>
+
+    <table class="table m-5">
+
+            <tr>
+        
+                <td>Nombre</td>
+                <td>Correo electronico </td>
+                <td>Numero de documento</td>
+                
+            </tr>
+            
+            <?php
+            while ($rowTotal = mysqli_fetch_assoc($resul)) {
+                echo "<tr></td> <td>" . $rowTotal['User_Name'] . "</td> <td>" . $rowTotal['User_Mail'] . "</td> <td>" . $rowTotal['User_Document'] . "</td> <td></tr>";
+            }
+            echo "";
+            ?>
+    </table>
+
+    
     </div>
 </body>
 </html>
