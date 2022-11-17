@@ -2,7 +2,7 @@
 session_start();
 if(!$_SESSION['usuarioX'] && !$_SESSION['claveX'])
 {
-    header("Location: formLogin.php");
+    header("Location: index.php");
 }
 else {
     
