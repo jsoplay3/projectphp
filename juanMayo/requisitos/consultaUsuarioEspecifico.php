@@ -21,5 +21,33 @@
         include("menu.php");
     ?>
     </div>
+
+    <?php
+        include_once("db.php");
+        $documentoEsp = $_POST["documentoUsuaEsp"];
+
+    if(!$documentoEspecifico){
+        echo "Diligencie el campo";
+        return false;
+    }else  if(!is_nan($documentoEsp)){
+        echo "El campo debe tener numeros";
+        return false;
+    }else {
+        $conectar= conn();
+    $sql= "SELECT * FROM registrousuarios WHERE ru_nro_documento_usuario  = '$documentoEspecifico'";
+    $resul= mysqli_query($conectar,$sql) or trigger_error("Error:", mysqli_error($conectar));
+
+    echo "<h2>Se encontro el usuario</h2>";
+echo "<table border= '1.5' class='table table-bordered'>
+ <TR><TD>ID</TD><TD>NOMBRE USUARIO</TD><TD>MAIL USUARIO</TD><TD>DOCUMENTO USUARIO</TD><TD>CLAVE USUARIO</TD><TD>FECHA REGISTRO</TD><TD>FECHA MODIFICACION</TD><TD>USUARIO REGISTRO</TD><TD>USUARIO MODIFICO</TD><TD>ESTADO</TD></TR>";
+
+    while($consu_dato_esp=mysqli_fetch_array($resul)){
+        echo "<TR><TD>".$consu_dato_esp['id']."</TD><TD>".$consu_dato_esp['nombre_usuario']."</TD><TD>".$consu_dato_esp['mail_usuario']."</TD><TD>".$consu_dato_esp['documento_usuario']."</TD><TD>".$consu_dato_esp['clave_usuario']."</TD><TD>".$consu_dato_esp['fecha_registro']."</TD><TD>".$consu_dato_esp['fecha_modificacion']."</TD><TD>".$consu_dato_esp['usuario_registro']."</TD><TD>".$consu_dato_esp['usuario_modificacion']."</TD><TD>".$consu_dato_esp['estado']."</TD></TR>";
+    }
+    }
+    
+    echo "</table>";
+    ?>
+
 </body>
 </html>

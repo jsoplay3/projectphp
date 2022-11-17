@@ -23,12 +23,25 @@
         $mailUsuarioSolicitado = $_POST['mailUsuarioSolicitado'];
         $documentoUsuarioSolicitado = $_POST['documentoUsuarioSolicitado'];
         $passwordUsuarioSolicitado = md5 ($_POST['passwordUsuarioSolicitado']);
+        $estado = TRUE;
+
+    
+        if($nombreUsuarioSolicitado == ""|| $mailUsuarioSolicitado == ""|| $documentoUsuarioSolicitado == ""
+        || $passwordUsuarioSolicitado == ""){
+            echo "Debes diligenciar todos los campos";
+        }else if(!is_numeric ($documentoUsuarioSolicitado)){
+            echo "Solo debe ingresar numeros en Numero de Documento ";
+        }
+        if(!preg_match('/^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/',"$mailUsuarioSolicitado")){
+            echo "El campo Mail del Usuario debe ser diligenciado correctamente";
+        }
+
     ?>
     <?php
         include_once("db.php");
 
         $conectar=conn();
-        $sql="INSERT INTO `registrousuario` (`ru_nombre_usuario`,`ru_mail_usuario`,`ru_nro_documento_usuario`,`ru_contraseña_usuario`) VALUES ('$nombreUsuarioSolicitado','$mailUsuarioSolicitado','$documentoUsuarioSolicitado','$passwordUsuarioSolicitado')";
+        $sql="INSERT INTO `registrousuario` (`ru_nombre_usuario`,`ru_mail_usuario`,`ru_nro_documento_usuario`,`ru_contraseña_usuario`,`ru_estado`) VALUES ('$nombreUsuarioSolicitado','$mailUsuarioSolicitado','$documentoUsuarioSolicitado','$passwordUsuarioSolicitado','estado')";
         $resul = mysqli_query($conectar,$sql) or trigger_error("Error:",mysqli_error($conectar));
      ?>
 

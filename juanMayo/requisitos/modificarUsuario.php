@@ -18,5 +18,20 @@
         include("menu.php");
     ?>
     </div>
+    <table border= '1.5' class='table table-bordered'>
+ <TR><TD>ID</TD><TD>NOMBRE USUARIO</TD><TD>MAIL USUARIO</TD><TD>DOCUMENTO USUARIO</TD><TD>CLAVE DEL USUARIO</TD><TD>FECHA DE REGISTRO</TD><TD>FECHA DE MODIFICACION</TD><TD>USUARIO REGISTRO</TD><TD>USUARIO MODIFICO</TD><TD>ESTADO</TD></TR>
+        <?php
+        include_once("db.php");
+        
+        $documentomodificar = $_POST["documentoModificar"];
+
+    $conectar= conn();
+    $sql= "SELECT * FROM registrousuario WHERE ru_nro_documento_usuario = '$documentomodificar'";
+    $resul= mysqli_query($conectar,$sql) or trigger_error("Error:", mysqli_error($conectar));
+    while($consu_dato_esp=mysqli_fetch_array($resul)){
+        echo "<TR><TD>".$consu_dato_esp['id']."</TD><TD>".$consu_dato_esp['ru_nombre_usuario']."</TD><TD>".$consu_dato_esp['ru_mail_usuario']."</TD><TD>".$consu_dato_esp['ru_nro_documento_usuario']."</TD><TD>".$consu_dato_esp['ru_contraseña_usuario']."</TD><TD>".$consu_dato_esp['ru_fechaa_registro']."</TD><TD>".$consu_dato_esp['ru_fecha_modificacion']."</TD><TD>".$consu_dato_esp['ru_usuario_registro']."</TD><TD>".$consu_dato_esp['u_usuario_modificacion']."</TD><TD>".$consu_dato_esp['ru_estado']."</TD></TR>";
+    }
+    ?>
+</table>
 </body>
 </html>
