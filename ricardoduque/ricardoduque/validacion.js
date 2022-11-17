@@ -1,8 +1,8 @@
 function val() {
-    var mailuser = document.getElementById("").value;
-    var docuser = document.getElementById("").value;
-    var passwuser = document.getElementById("").value;
-    var nameuser = document.getElementById("").value;
+    var mailuser = document.getElementById("mailUsuarioSolicitado").value;
+    var docuser = document.getElementById("documentoUsuarioSolicitado").value;
+    var passwuser = document.getElementById("passwordUsuarioSolicitado").value;
+    var nameuser = document.getElementById("nombreUsuarioSolicitado").value;
    
 
 
@@ -20,11 +20,29 @@ function val() {
 
     
     if(! /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/.test(mailuser)){
-        alert("Estructura no valida de correo");
+        alert("Correo no valido ");
         return false;
     }
     
   
 
+
+}
+function consulta() {
+    var docuserconsul = document.getElementById("documentoUsuarioSolicitado").value;
+    if(!docuserconsul){
+        alert("Rellene los datos");
+        return false;
+    }
+  
+}
+
+function usercon(){
+    var userx = document.getElementById("nombreUsuarioSolicitado").value;
+    var passx = document.getElementById("passwordUsuarioSolicitado").value;
+    if(!userx || !passx){
+        alert("Rellene los datos");
+        return false;
+    }
 
 }

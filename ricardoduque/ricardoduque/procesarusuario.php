@@ -1,3 +1,6 @@
+<?php
+    include("tentica.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,10 +21,38 @@
              include("menu.php")
         $nombreUsuarioSolicitado = $_POST['nombreUsuarioSolicitado'];
          $mailUsuarioSolicitado = $_POST['mailUsuarioSolicitado'];
+         $documentoUsuarioSolicitado=  $_POST['documentoUsuarioSolicitado'];
+        $passwordUsuarioSolicitado= $_POST['passwordUsuarioSolicitado'];
+
+
+        if(!$nombreUsuarioSolicitado || !$mailUsuarioSolicitado
+        || !$documentoUsuarioSolicitado || !$passwordUsuarioSolicitado){
+            echo "Ha faltado algun campo";
+        };
+
+        if(!is_numeric($documentoUsuarioSolicitado)){
+            echo "solo se aceptan números en el campo documento";
+        }
+         
+        $clave=md5($passwordUsuarioSolicitado);
+        echo 'Clave encriptada: '.$clave;
+        
+        if(!preg_match('/^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/',"$mailUsuarioSolicitado")){
+            echo "Estructura de correo no valida";
+        } 
+
+        include_once('db.php');
+        $conectar=conn();
+        $sql="INSERT INTO `usuarios` VALUES ('$nombreUsuarioSolicitado', '$mailUsuarioSolicitado', '$documentoUsuarioSolicitado', '$passwordUsuarioSolicitado')";
+        $resul = mysqli_query($conectar,$sql) or trigger_error("Error:",mysqli_error($conectar));
+        
+        header("Location: registroUsuario.php");
+
+        ?>
         
           
           
-           ?>
+      
         </div>
    </body>
 </html>

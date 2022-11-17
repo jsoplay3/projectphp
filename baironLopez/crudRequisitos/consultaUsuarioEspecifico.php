@@ -1,7 +1,11 @@
+<<<<<<< HEAD
+    <!DOCTYPE html>
+=======
 <?php
     include("autentica.php");
 ?>
 <!DOCTYPE html>
+>>>>>>> 339a9185e55840eb0ded5edeef3d370f70e4018e
 <html lang="en">
 <head>
     <meta charset="UTF-8">
