@@ -32,7 +32,7 @@
             echo "El campo Numero de Documento debe contener solo digitos numericos";
         }else if(!preg_match('/^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/',"$mailUsuarioSolicitado")){
             echo "El campo Mail del Usuario debe contener la estructura de un correo";
-        }else{
+        } else{
         ?>
         <?php
         include_once("db.php"); 
@@ -42,7 +42,6 @@
         $resul = mysqli_query($conectar,$sql) or trigger_error("Error:",mysqli_error($conectar));
         header("Location: registroUsuario.php");
         }
-
     ?>
     </div>
 </body>

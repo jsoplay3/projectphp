@@ -14,11 +14,12 @@
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </head>
+<script src="validacionMod.js"></script>
 <body>
     <div class="container"><?php
         include("menu.php");
     ?>
-    <form action="modificarUsuarioEspecifico.php" method="post">
+    <form action="modificarUsuarioGeneral.php" method="post" onsubmit="return validacionUsuMod()">
         <h2>Modificar Usuario</h2>
         <label for="" class="form-label">Numero de documento del usuario a modificar</label>
         <input type="text" name="documentoModificar" id="documentoModificar" class="form-control">
