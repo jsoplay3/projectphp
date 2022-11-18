@@ -27,6 +27,7 @@
 
         if(!$documentomodificar){
             echo "Debe poner el documento del usuario que desea modificar";
+            header("Location: modificarUsuarioGeneral.php");
         }else{
 
             echo "<h2>Usuario Encontrado</h2>
